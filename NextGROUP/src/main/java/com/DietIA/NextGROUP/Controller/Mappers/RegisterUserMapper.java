@@ -1,9 +1,8 @@
-package com.DietIA.NextGROUP.Controller;
+package com.DietIA.NextGROUP.Controller.Mappers;
 
 import com.DietIA.NextGROUP.Controller.DTO.UserDTO.RegisterUserDTO;
 import com.DietIA.NextGROUP.Model.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.control.MappingControl;
 
 @Mapper
 public interface RegisterUserMapper {
