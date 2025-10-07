@@ -61,9 +61,12 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Email já está em uso.");
         }
 
-        String encryptedPassword = passwordEncoder.encode(data.password());
 
         User newUser = registerUserMapper.toEntity(data);
+
+
+        String encryptedPassword = passwordEncoder.encode(data.password());
+        newUser.setPassword(encryptedPassword); // <<< LINHA CORRIGIDA/ADICIONADA
 
         this.userRepository.save(newUser);
 
