@@ -59,7 +59,7 @@ public class AuthController {
     public ResponseEntity<String> register(@RequestBody @Valid RegisterUserDTO data) {
         if (this.userRepository.findByEmail(data.email()).isPresent()) {
             return ResponseEntity.badRequest().body("Email já está em uso.");
-        }
+        }   
 
 
         User newUser = registerUserMapper.toEntity(data);

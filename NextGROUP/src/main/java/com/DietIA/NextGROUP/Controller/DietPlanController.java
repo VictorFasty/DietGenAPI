@@ -22,13 +22,13 @@ public class DietPlanController {
 
     @PostMapping("/generate")
     public ResponseEntity<DietPlanResponseDTO> generateDiet() {
-        // 1. Delega todo o trabalho pesado para o serviço.
+
         DietPlan savedDietPlan = dietPlanService.generateAndSaveDietForCurrentUser();
 
-        // 2. Converte a entidade salva (com IDs e tudo) para um DTO limpo.
+
         DietPlanResponseDTO responseDto = dietPlanMapper.toDto(savedDietPlan);
 
-        // 3. Retorna o DTO com um status 200 OK.
+
         return ResponseEntity.ok(responseDto);
     }
 
